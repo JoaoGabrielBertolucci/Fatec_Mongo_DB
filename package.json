@@ -1,0 +1,20 @@
+{
+  "name": "fatec_mongo_db",
+  "version": "1.0.0",
+  "description": "backend em node integrado ao mongo db",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "mongodb",
+    "express"
+  ],
+  "author": "JoaoGabriel",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^6.0.0"
+  }
+}
