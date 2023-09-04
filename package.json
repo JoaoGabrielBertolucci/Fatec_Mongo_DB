@@ -2,7 +2,8 @@
   "name": "fatec_mongo_db",
   "version": "1.0.0",
   "description": "backend em node integrado ao mongo db",
-  "main": "index.js",
+  "main": "api/index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
