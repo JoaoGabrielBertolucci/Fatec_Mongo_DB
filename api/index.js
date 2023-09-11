@@ -2,7 +2,7 @@ import express from "express";
 
 const app = express()
 
-const port = 4000
+const port = 5000
 
 app.use(express.json()) // faser parse de arquivos JSON 
 
@@ -31,6 +31,8 @@ app.use(function (req, res)
             param: 'Invalid Route'
         }]
 
-    })
-    
+    })   
+})
+app.listen(port, function(){
+    console.log(`servidor rodando na porta ${port}`)
 })
