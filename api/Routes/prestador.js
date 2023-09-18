@@ -10,6 +10,15 @@ const nomeCollection = 'prestadores'
 const validaPrestador = [
     check('cnpj')
     .not().isEmpty().trim().withMessage('Informe o CNPJ')
+    .isNumeric().withMessage('o CPNJ deve conter números')
+    .isLengh({min:14, max:14}).withMessage('O CPNJ deve conter 14 nºs')
+
+
+    .check('razao_social')
+    .not().isEmpty().trim().withMessage('informe a razão')
+    .isAlphanumeric('pt-BR', {ignore:'/.'}).withMessage("A Razão social não deve")
+    .isLengh({min:5}).withMessage('Razão é muito curta Mínimo 5')
+    .isLength({max:200}).withMessage('A Razão é muito longe. Maximo 200')
 ]
 
 /**
