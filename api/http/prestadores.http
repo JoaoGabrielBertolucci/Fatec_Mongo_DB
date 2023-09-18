@@ -1,0 +1,6 @@
+@baseURL = http;//localhost:4000/api/prestadores
+GET{{baseURL}}
+Content-Type:application/json
+
+
+GET{{baseURL}}/id/

@@ -1,10 +1,16 @@
 /* API REST dos prestadores */
-import express from 'express'
-import { connectToDatabase } from '../utils/mongodb.js'
+import express, { Router } from 'express'
+import { connectToDatabase } from '../Utils/mongodb.js'
+import {check, validationResult} from 'express-validation'
 
 const router = express.Router()
 const {db, ObjectId} = await connectToDatabase()
 const nomeCollection = 'prestadores'
+
+const validaPrestador = [
+    check('cnpj')
+    .not().isEmpty().trim().withMessage('Informe o CNPJ')
+]
 
 /**
  * GET /api/prestadores
@@ -46,4 +52,14 @@ router.get('/id/:id', async(req, res)=> {
         res.status(500).json({"error": err.message})
     }
 })
+
+router.delete('/:id', async(req, res) => {
+
+await db.collection (nomeCollection)
+.deleteOne({"_id": {$eq: ObjectId(req.perams.id)}})
+.then(result => res.status(200).send(result))
+.catch(err =>res.status(400).json(err))
+
+})
+
 export default router

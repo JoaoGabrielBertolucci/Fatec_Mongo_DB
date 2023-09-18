@@ -18,7 +18,7 @@ app.use('/api/prestadores', rotasPrestadores)
 
 app.get('/api', (req, res) => {
     res.status(200).json({
-        message: 'API Fatec 100% funcional🖐',
+        message: 'API Fatec 100% funcional👌',
         version: '1.0.1'
     })
 })
